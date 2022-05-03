@@ -1,0 +1,34 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "<your-site-name>",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextServer"
+      }
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs14",
+    "ignore": [
+      "**/.git/**",
+      "**/.firebase/**",
+      "**/.history/**",
+      "**/.next/cache/**",
+      "**/node_modules/**",
+      "**/public/**",
+      "**/src/**",
+      "**/.eslintrc.json",
+      "**/.firebaserc",
+      "**/.gitignore",
+      "**/firebase.json",
+      "**/.next-env.d.ts",
+      "**/.next.config.js",
+      "**/{README,SETUP}.md",
+      "**/.tsconfig.json"
+    ]
+  }
+}

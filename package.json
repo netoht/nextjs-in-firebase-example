@@ -1,0 +1,30 @@
+{
+  "name": "nextjs-in-firebase-example",
+  "main": "function.js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "next build && firebase deploy --only hosting,functions:nextServer",
+    "deploy-functions": "firebase deploy --only functions:nextServer",
+    "deploy-hosting": "firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "firebase-admin": "^10.1.0",
+    "firebase-functions": "^3.20.1",
+    "next": "12.1.5",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.31",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.3",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "typescript": "4.6.4"
+  }
+}
