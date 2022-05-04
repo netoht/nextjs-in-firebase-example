@@ -5,12 +5,15 @@ type Item = {
   title: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Item | any>
 ) {
-  fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then((response) => response.json())
-    .then((json) => res.status(200).json(json))
-    .catch((error) => res.status(500).json({ error }));
+  try {
+    const result = await fetch('https://jsonplaceholder.typicode.com/todos/3');
+    const data = await result.json();
+    return res.status(200).json(data);
+  } catch (error: any) {
+    return res.status(500).json({ message: error.message });
+  }
 }
